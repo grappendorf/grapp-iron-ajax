@@ -1,0 +1,43 @@
+{
+  "name": "grapp-core-ajax",
+  "description": "A Polymer core-ajax web component with some customizations",
+  "version": "0.0.0",
+  "main": "grapp-core-ajax.html",
+  "license": "MIT",
+  "ignore": [
+    "bin",
+    "build",
+    "lib",
+    "node_modules",
+    "src",
+    "test",
+    "tmpl",
+    "package.json",
+    "**/.*",
+    "**/*.log",
+    "**/*.sublime-*"
+  ],
+  "keywords": [
+    "web-components",
+    "polymer",
+    "coyoho",
+    "grappendorf"
+  ],
+  "authors": [
+    "Dirk Grappendorf <dirk@grappendorf.net> (http://www.grappendorf.net)"
+  ],
+  "homepage": "https://github.com/grappendorf/grapp-core-ajax",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/grappendorf/grapp-core-ajax.git"
+  },
+  "dependencies": {
+    "core-ajax": "Polymer/core-ajax#~0.5.4"
+  },
+  "devDependencies": {
+    "coffee-script": "latest",
+    "jquery": "latest",
+    "web-component-tester": "Polymer/web-component-tester#latest",
+    "happen": "latest"
+  }
+}

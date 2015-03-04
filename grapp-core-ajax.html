@@ -1,0 +1,62 @@
+
+<!--
+Copyright (c) 2014-2015 Dirk Grappendorf, www.grappendorf.net. All rights reserved.
+This code may only be used under the MIT style license found in the file LICENSE.txt.
+
+Element: grapp-core-ajax
+Version: 0.0.0
+Description: A Polymer core-ajax web component with some customizations
+-->
+
+
+<link rel="import" href="../core-ajax/core-ajax.html">
+
+<polymer-element name="grapp-core-ajax" extends="core-ajax">
+
+<script type="text/javascript">(function() {
+  Polymer('grapp-core-ajax', {
+    processError: function(xhr) {
+      var response;
+      try {
+        response = JSON.parse(xhr.responseText);
+      } catch (_error) {
+        response = '';
+      }
+      return this.fire('core-error', {
+        status: xhr.status,
+        response: response,
+        xhr: xhr
+      });
+    },
+    go: function() {
+      this.add_accept_header();
+      return this["super"]();
+    },
+    add_headers: function(headers) {
+      var key, results;
+      this.headers = this.headers || {};
+      if (this.headers && typeof this.headers === 'string') {
+        this.headers = JSON.parse(this.headers);
+      }
+      results = [];
+      for (key in headers) {
+        results.push(this.headers[key] = headers[key]);
+      }
+      return results;
+    },
+    add_csrf_header: function() {
+      return this.add_headers({
+        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
+      });
+    },
+    add_accept_header: function() {
+      return this.add_headers({
+        'Accept': 'application/json'
+      });
+    }
+  });
+
+}).call(this);
+</script>
+
+</polymer-element>
