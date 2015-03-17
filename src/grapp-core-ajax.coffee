@@ -14,6 +14,6 @@ Polymer 'grapp-core-ajax',
     @headers = @headers || {}
     if @headers && typeof(@headers) == 'string'
       @headers = JSON.parse @headers
-    headers['Accept'] = 'application/json' if @handleAs == 'json'
-    headers['Authorization'] = @token if @token
+    @headers['Accept'] = 'application/json' if @handleAs == 'json'
+    @headers['Authorization'] = @token if @token
     @super()
