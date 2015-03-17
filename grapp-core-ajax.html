@@ -11,7 +11,7 @@ Description: A Polymer core-ajax web component with some customizations
 
 <link rel="import" href="../core-ajax/core-ajax.html">
 
-<polymer-element name="grapp-core-ajax" extends="core-ajax">
+<polymer-element name="grapp-core-ajax" extends="core-ajax" attributes="token">
 
 <script type="text/javascript">(function() {
   Polymer('grapp-core-ajax', {
@@ -29,30 +29,17 @@ Description: A Polymer core-ajax web component with some customizations
       });
     },
     go: function() {
-      this.add_accept_header();
-      return this["super"]();
-    },
-    add_headers: function(headers) {
-      var key, results;
       this.headers = this.headers || {};
       if (this.headers && typeof this.headers === 'string') {
         this.headers = JSON.parse(this.headers);
       }
-      results = [];
-      for (key in headers) {
-        results.push(this.headers[key] = headers[key]);
+      if (this.handleAs === 'json') {
+        headers['Accept'] = 'application/json';
       }
-      return results;
-    },
-    add_csrf_header: function() {
-      return this.add_headers({
-        'X-CSRF-Token': document.querySelector('meta[name="csrf-token"]').content
-      });
-    },
-    add_accept_header: function() {
-      return this.add_headers({
-        'Accept': 'application/json'
-      });
+      if (this.token) {
+        headers['Authorization'] = this.token;
+      }
+      return this["super"]();
     }
   });
 
