@@ -1,3 +1,12 @@
+<a name="0.0.3"></a>
+### 0.0.3 (2015-03-17)
+
+
+#### Bug Fixes
+
+* Missing @ ([29572b89](http://github.com/grappendorf/grapp-core-ajax/commit/29572b89e1366f2ea7fb11c579f02ed7f40c2041))
+
+
 <a name="0.0.2"></a>
 ### 0.0.2 (2015-03-17)
 

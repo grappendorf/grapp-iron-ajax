@@ -1,7 +1,7 @@
 {
   "name": "grapp-core-ajax",
   "description": "A Polymer core-ajax web component with some customizations",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "grapp-core-ajax.html",
   "license": "MIT",
   "ignore": [
