@@ -32,12 +32,11 @@
     "url": "git://github.com/grappendorf/grapp-core-ajax.git"
   },
   "dependencies": {
-    "core-ajax": "Polymer/core-ajax#~0.5.4"
+    "iron-ajax": "PolymerElements/iron-ajax#~1.0.0"
   },
   "devDependencies": {
-    "coffee-script": "latest",
-    "jquery": "latest",
-    "web-component-tester": "Polymer/web-component-tester#latest",
-    "happen": "latest"
+    "web-component-tester": "Polymer/web-component-tester#3.1.7",
+    "jquery": "2.1.4",
+    "coffee-script": "1.9.3"
   }
 }

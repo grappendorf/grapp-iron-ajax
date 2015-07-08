@@ -2,12 +2,9 @@
 <html>
 
 <head>
-
   <title>grapp-core-ajax web component</title>
-
-  <script src="lib/webcomponentsjs/webcomponents.min.js"></script>
-  <link href="grapp-core-ajax.html" rel="import">
-
+  <script src='lib/webcomponentsjs/webcomponents-lite.min.js'></script>
+  <link href="build/grapp-core-ajax.html" rel="import">
 </head>
 
 <body>
@@ -19,14 +16,34 @@
   <p>
     <a href="test/index.html">Click here to run the tests...</a>
   </p>
+
   <p>
     <a href="README.md">Click here to read the documentation...</a>
   </p>
+
   <p>
     <a href="CHANGELOG.md">Click here to read the changelog...</a>
   </p>
 
   <h2>Demo</h2>
+
+  <template is="dom-bind">
+    <grapp-core-ajax auto url="/ajax-request"
+                     last-response="{{response1}}"></grapp-core-ajax>
+
+    <grapp-core-ajax auto url="/ajax-request-with-auth-error" on-grapp-authorization-error="error"
+                     last-response="{{response2}}"></grapp-core-ajax>
+
+    <div>Without error: <span>[[response1.message]]</span></div>
+    <div id="error">With auth error: <span>[[response2.error]]</span></div>
+  </template>
+
+  <script>
+    var t = document.querySelector('template');
+    t.error = function() {
+      document.querySelector('#error').style.backgroundColor = 'red';
+    };
+  </script>
 
   <script src="//localhost:35729/livereload.js"></script>
 
