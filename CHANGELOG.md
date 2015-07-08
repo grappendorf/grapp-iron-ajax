@@ -1,3 +1,12 @@
+<a name="0.1.0"></a>
+## 0.1.0 (2015-07-08)
+
+
+#### Features
+
+* Upgrade to Polymer 1.0 ([b397d9c5](http://github.com/grappendorf/grapp-core-ajax/commit/b397d9c548bc3fc290fd8425a08a3ea18a0a74f9))
+
+
 <a name="0.0.3"></a>
 ### 0.0.3 (2015-03-17)
 
