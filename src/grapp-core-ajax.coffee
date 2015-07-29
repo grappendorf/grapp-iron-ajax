@@ -37,9 +37,8 @@ Polymer
 
   getQueryString: ->
     queryParts = []
-    for param in @params
-      value = @params[param]
-      param = window.encodeURIComponent param
+    for key, value of @params
+      param = window.encodeURIComponent key
       if value?
         param += '=' + window.encodeURIComponent value
       queryParts.push param
@@ -53,8 +52,8 @@ Polymer
     headers =
       'Content-Type': @contentType
     if @headers instanceof Object
-      for header in @headers
-        headers[header] = @headers[header].toString()
+      for key, value of @headers
+        headers[key] = value.toString()
     headers
 
   toRequestOptions: ->

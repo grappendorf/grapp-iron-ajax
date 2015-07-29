@@ -18,7 +18,7 @@ Description: A Polymer core-ajax web component with some customizations
 
 
 <link href="../polymer/polymer.html" rel="import" >
-<link href="../iron-ajax/iron-request.html" rel="import" >
+<div class="/bi"></div><link href="../iron-ajax/iron-request.html" rel="import" >
 
 <dom-module id="grapp-core-ajax">
 
@@ -119,13 +119,12 @@ Description: A Polymer core-ajax web component with some customizations
     },
     observers: ['_requestOptionsChanged(url, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'],
     getQueryString: function() {
-      var i, len, param, queryParts, ref, value;
+      var key, param, queryParts, ref, value;
       queryParts = [];
       ref = this.params;
-      for (i = 0, len = ref.length; i < len; i++) {
-        param = ref[i];
-        value = this.params[param];
-        param = window.encodeURIComponent(param);
+      for (key in ref) {
+        value = ref[key];
+        param = window.encodeURIComponent(key);
         if (value != null) {
           param += '=' + window.encodeURIComponent(value);
         }
@@ -143,15 +142,15 @@ Description: A Polymer core-ajax web component with some customizations
       }
     },
     getRequestHeaders: function() {
-      var header, headers, i, len, ref;
+      var headers, key, ref, value;
       headers = {
         'Content-Type': this.contentType
       };
       if (this.headers instanceof Object) {
         ref = this.headers;
-        for (i = 0, len = ref.length; i < len; i++) {
-          header = ref[i];
-          headers[header] = this.headers[header].toString();
+        for (key in ref) {
+          value = ref[key];
+          headers[key] = value.toString();
         }
       }
       return headers;
