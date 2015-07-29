@@ -1,3 +1,12 @@
+<a name="0.1.1"></a>
+### 0.1.1 (2015-07-29)
+
+
+#### Bug Fixes
+
+* Use 'of 'instead of 'in' when iterating over objects ([585c718e](http://github.com/grappendorf/grapp-core-ajax/commit/585c718ecb5605e9cf0a4bf3bc62726b3cd5afdc))
+
+
 <a name="0.1.0"></a>
 ## 0.1.0 (2015-07-08)
 
