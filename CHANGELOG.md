@@ -1,3 +1,12 @@
+<a name="0.1.2"></a>
+### 0.1.2 (2015-08-04)
+
+
+#### Bug Fixes
+
+* Remove superfluous div tag ([1135445d](http://github.com/grappendorf/grapp-core-ajax/commit/1135445d45fec216dfbe73861d8337cce1139a47))
+
+
 <a name="0.1.1"></a>
 ### 0.1.1 (2015-07-29)
 
