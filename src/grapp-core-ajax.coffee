@@ -110,7 +110,7 @@ Polymer
 
   _requestOptionsChanged: ->
     @debounce 'generate-request', ->
-      if !@url && @url != ''
+      if !@url || @url == ''
         return
       if @auto
         @generateRequest()
