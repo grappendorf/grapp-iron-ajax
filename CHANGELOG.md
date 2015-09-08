@@ -1,3 +1,12 @@
+<a name="0.1.3"></a>
+### 0.1.3 (2015-09-08)
+
+
+#### Bug Fixes
+
+* wrong check for empty or undefined URLs ([c900bcf5](http://github.com/grappendorf/grapp-core-ajax/commit/c900bcf5d28c4dda83ac23ca3fc460b8443ded8d))
+
+
 <a name="0.1.2"></a>
 ### 0.1.2 (2015-08-04)
 
