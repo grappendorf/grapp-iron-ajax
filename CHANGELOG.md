@@ -1,3 +1,12 @@
+<a name="0.2.0"></a>
+## 0.2.0 (2015-09-17)
+
+
+#### Bug Fixes
+
+* rename component to grapp-iron-ajax ([f02b8d8c](http://github.com/grappendorf/grapp-iron-ajax/commit/f02b8d8c71795f3e1d91a5dd49cda115560bcf8f))
+
+
 <a name="0.1.5"></a>
 ### 0.1.5 (2015-09-17)
 
