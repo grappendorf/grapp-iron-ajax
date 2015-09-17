@@ -1,4 +1,4 @@
-grapp-core-ajax
+grapp-iron-ajax
 ===============
 
 A Polymer iron-ajax web component with some customizations.
@@ -12,7 +12,7 @@ Extends
   * [**iron-ajax**](https://elements.polymer-project.org/elements/iron-ajax)
 
 Currently with Polymer 1.0 we cannot extend custom elements. So in this version if have copied the
-code from the iron-ajax element into my grapp-core-ajax element.
+code from the iron-ajax element into my grapp-iron-ajax element.
 
 Modifications:
 

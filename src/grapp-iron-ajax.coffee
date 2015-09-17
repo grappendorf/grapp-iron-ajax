@@ -7,7 +7,7 @@
 
 Polymer
 
-  is: 'grapp-core-ajax'
+  is: 'grapp-iron-ajax'
 
   properties:
     url: {type: String, value: ''}

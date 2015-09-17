@@ -2,14 +2,14 @@
 <html>
 
 <head>
-  <title>grapp-core-ajax web component</title>
+  <title>grapp-iron-ajax web component</title>
   <script src='lib/webcomponentsjs/webcomponents-lite.min.js'></script>
-  <link href="build/grapp-core-ajax.html" rel="import">
+  <link href="build/grapp-iron-ajax.html" rel="import">
 </head>
 
 <body>
 
-  <h1>grapp-core-ajax web component</h1>
+  <h1>grapp-iron-ajax web component</h1>
 
   <h2>A Polymer core-ajax web component with some customizations</h2>
 
@@ -28,11 +28,11 @@
   <h2>Demo</h2>
 
   <template is="dom-bind">
-    <grapp-core-ajax auto url="/ajax-request"
-                     last-response="{{response1}}"></grapp-core-ajax>
+    <grapp-iron-ajax auto url="/ajax-request"
+                     last-response="{{response1}}"></grapp-iron-ajax>
 
-    <grapp-core-ajax auto url="/ajax-request-with-auth-error" on-grapp-authorization-error="error"
-                     last-response="{{response2}}"></grapp-core-ajax>
+    <grapp-iron-ajax auto url="/ajax-request-with-auth-error" on-grapp-authorization-error="error"
+                     last-response="{{response2}}"></grapp-iron-ajax>
 
     <div>Without error: <span>[[response1.message]]</span></div>
     <div id="error">With auth error: <span>[[response2.error]]</span></div>

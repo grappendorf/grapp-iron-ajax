@@ -1,8 +1,8 @@
 {
-  "name": "grapp-core-ajax",
+  "name": "grapp-iron-ajax",
   "description": "A Polymer core-ajax web component with some customizations",
   "version": "0.1.5",
-  "main": "grapp-core-ajax.html",
+  "main": "grapp-iron-ajax.html",
   "license": "MIT",
   "ignore": [
     "bin",
@@ -25,10 +25,10 @@
   "authors": [
     "Dirk Grappendorf <dirk@grappendorf.net> (http://www.grappendorf.net)"
   ],
-  "homepage": "https://github.com/grappendorf/grapp-core-ajax",
+  "homepage": "https://github.com/grappendorf/grapp-iron-ajax",
   "repository": {
     "type": "git",
-    "url": "git://github.com/grappendorf/grapp-core-ajax.git"
+    "url": "git://github.com/grappendorf/grapp-iron-ajax.git"
   },
   "dependencies": {
     "iron-ajax": "PolymerElements/iron-ajax#^1.0.0"
