@@ -1,3 +1,12 @@
+<a name="0.1.5"></a>
+### 0.1.5 (2015-09-17)
+
+
+#### Bug Fixes
+
+* workaround: wct currently expects to find some bower components in the component ([6579b7ce](http://github.com/grappendorf/grapp-core-ajax/commit/6579b7ceef7f569c1a96cdb717b9932819adfdd7))
+
+
 <a name="0.1.4"></a>
 ### 0.1.4 (2015-09-09)
 
