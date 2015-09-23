@@ -1,3 +1,12 @@
+<a name="0.2.1"></a>
+### 0.2.1 (2015-09-24)
+
+
+#### Features
+
+* add baseUrl and path properties so the url is composed of baseUrl + url + path ( ([b177da75](http://github.com/grappendorf/grapp-iron-ajax/commit/b177da75f3b928a31b8d2bdfa452353a5ff492a6))
+
+
 <a name="0.2.0"></a>
 ## 0.2.0 (2015-09-17)
 

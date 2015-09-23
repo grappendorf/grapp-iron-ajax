@@ -1,7 +1,7 @@
 {
   "name": "grapp-iron-ajax",
   "description": "A Polymer core-ajax web component with some customizations",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "main": "grapp-iron-ajax.html",
   "license": "MIT",
   "ignore": [
