@@ -26,7 +26,15 @@ Description: A Polymer core-ajax web component with some customizations
   Polymer({
     is: 'grapp-iron-ajax',
     properties: {
+      baseUrl: {
+        type: String,
+        value: ''
+      },
       url: {
+        type: String,
+        value: ''
+      },
+      path: {
         type: String,
         value: ''
       },
@@ -117,7 +125,7 @@ Description: A Polymer core-ajax web component with some customizations
         type: String
       }
     },
-    observers: ['_requestOptionsChanged(url, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'],
+    observers: ['_requestOptionsChanged(baseUrl, url, path, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'],
     getQueryString: function() {
       var key, param, queryParts, ref, value;
       queryParts = [];
@@ -135,11 +143,7 @@ Description: A Polymer core-ajax web component with some customizations
     getRequestUrl: function() {
       var queryString;
       queryString = this.getQueryString();
-      if (queryString) {
-        return this.url + '?' + queryString;
-      } else {
-        return this.url;
-      }
+      return (this.baseUrl + this.url + this.path) + (queryString ? '?' + queryString : '');
     },
     getRequestHeaders: function() {
       var headers, key, ref, value;
@@ -222,7 +226,7 @@ Description: A Polymer core-ajax web component with some customizations
     },
     _requestOptionsChanged: function() {
       return this.debounce('generate-request', function() {
-        if (!this.url || this.url === '') {
+        if ((!this.url || this.url === '') && (!this.baseUrl || this.baseUrl === '')) {
           return;
         }
         if (this.auto) {

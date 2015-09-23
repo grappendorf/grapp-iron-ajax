@@ -28,10 +28,11 @@
   <h2>Demo</h2>
 
   <template is="dom-bind">
-    <grapp-iron-ajax auto url="/ajax-request"
+    <grapp-iron-ajax auto base-url="/api.example.com" path="/ajax-request"
                      last-response="{{response1}}"></grapp-iron-ajax>
 
-    <grapp-iron-ajax auto url="/ajax-request-with-auth-error" on-grapp-authorization-error="error"
+    <grapp-iron-ajax auto base-url="/api.example.com" path="/ajax-request-with-auth-error"
+                     on-grapp-authorization-error="error"
                      last-response="{{response2}}"></grapp-iron-ajax>
 
     <div>Without error: <span>[[response1.message]]</span></div>

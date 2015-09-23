@@ -10,7 +10,9 @@ Polymer
   is: 'grapp-iron-ajax'
 
   properties:
+    baseUrl: {type: String, value: ''}
     url: {type: String, value: ''}
+    path: {type: String, value: ''}
     params: {type: Object, value: -> {}}
     method: {type: String, value: 'GET'}
     headers: {type: Object, value: -> {}}
@@ -32,7 +34,7 @@ Polymer
     token: {type: String}
 
   observers: [
-    '_requestOptionsChanged(url, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'
+    '_requestOptionsChanged(baseUrl, url, path, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'
   ]
 
   getQueryString: ->
@@ -46,7 +48,7 @@ Polymer
 
   getRequestUrl: ->
     queryString = @getQueryString()
-    if queryString then @url + '?' + queryString else @url
+    (@baseUrl + @url + @path) + (if queryString then  '?' + queryString else '')
 
   getRequestHeaders: ->
     headers =
@@ -110,7 +112,7 @@ Polymer
 
   _requestOptionsChanged: ->
     @debounce 'generate-request', ->
-      if !@url || @url == ''
+      if (!@url || @url == '') && (!@baseUrl || @baseUrl == '')
         return
       if @auto
         @generateRequest()
