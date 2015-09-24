@@ -1,3 +1,12 @@
+<a name="0.2.3"></a>
+### 0.2.3 (2015-09-24)
+
+
+#### Bug Fixes
+
+* add the query property to the requestOptionsChanged observer list ([a4ec9872](http://github.com/grappendorf/grapp-iron-ajax/commit/a4ec98728757bdd902143bf2712363a473d88503))
+
+
 <a name="0.2.2"></a>
 ### 0.2.2 (2015-09-24)
 
