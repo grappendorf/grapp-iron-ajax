@@ -86,7 +86,7 @@ module.exports = function(grunt) {
         options: {
           middleware: function(connect, options, middlewares) {
             middlewares.unshift(function(req, res, next) {
-              if (req.url === '/api.example.com/ajax-request') {
+              if (req.url === '/api.example.com/ajax-request/42?pos=123') {
                 res.end('{"message":"Hello World!"}');
               } else if (req.url === '/api.example.com/ajax-request-with-auth-error') {
                 res.statusCode = 401;

@@ -10,9 +10,8 @@ Polymer
   is: 'grapp-iron-ajax'
 
   properties:
-    baseUrl: {type: String, value: ''}
     url: {type: String, value: ''}
-    path: {type: String, value: ''}
+# grappendorf: params now replace ':name' parts of the url
     params: {type: Object, value: -> {}}
     method: {type: String, value: 'GET'}
     headers: {type: Object, value: -> {}}
@@ -32,23 +31,26 @@ Polymer
     _boundHandleResponse: {type: Function, value: -> @_handleResponse.bind(@)}
 # grappendorf: add token property
     token: {type: String}
+# grappendorf: add baseUrl property
+    baseUrl: {type: String, value: ''}
+# grappendorf: add path property
+    path: {type: String, value: ''}
+# grappendorf: add query property
+    query: {type: String, value: null}
 
   observers: [
     '_requestOptionsChanged(baseUrl, url, path, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'
   ]
 
-  getQueryString: ->
-    queryParts = []
-    for key, value of @params
-      param = window.encodeURIComponent key
-      if value?
-        param += '=' + window.encodeURIComponent value
-      queryParts.push param
-    queryParts.join '&'
+# grappendorf: removed the creation of a query string from the params hash
 
   getRequestUrl: ->
-    queryString = @getQueryString()
-    (@baseUrl + @url + @path) + (if queryString then  '?' + queryString else '')
+# grappendorf: add baseUrl, path and query to url
+    url = (@baseUrl + @url + @path) + (if @query then  '?' + @query else '')
+# grappendorf: params replace :name expressions in the url
+    for name, value of @params
+      url = url.replace ":#{name}", window.encodeURIComponent(value)
+    url
 
   getRequestHeaders: ->
     headers =
@@ -112,6 +114,7 @@ Polymer
 
   _requestOptionsChanged: ->
     @debounce 'generate-request', ->
+# grappendorf: add baseUrl check
       if (!@url || @url == '') && (!@baseUrl || @baseUrl == '')
         return
       if @auto

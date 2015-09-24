@@ -28,7 +28,8 @@
   <h2>Demo</h2>
 
   <template is="dom-bind">
-    <grapp-iron-ajax auto base-url="/api.example.com" path="/ajax-request"
+    <grapp-iron-ajax auto base-url="/api.example.com" path="/ajax-request/:id" query="pos=:pos"
+                     params='{"id":42,"pos":123}'
                      last-response="{{response1}}"></grapp-iron-ajax>
 
     <grapp-iron-ajax auto base-url="/api.example.com" path="/ajax-request-with-auth-error"

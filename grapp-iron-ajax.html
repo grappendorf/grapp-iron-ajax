@@ -26,15 +26,7 @@ Description: A Polymer core-ajax web component with some customizations
   Polymer({
     is: 'grapp-iron-ajax',
     properties: {
-      baseUrl: {
-        type: String,
-        value: ''
-      },
       url: {
-        type: String,
-        value: ''
-      },
-      path: {
         type: String,
         value: ''
       },
@@ -123,27 +115,30 @@ Description: A Polymer core-ajax web component with some customizations
       },
       token: {
         type: String
+      },
+      baseUrl: {
+        type: String,
+        value: ''
+      },
+      path: {
+        type: String,
+        value: ''
+      },
+      query: {
+        type: String,
+        value: null
       }
     },
     observers: ['_requestOptionsChanged(baseUrl, url, path, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'],
-    getQueryString: function() {
-      var key, param, queryParts, ref, value;
-      queryParts = [];
-      ref = this.params;
-      for (key in ref) {
-        value = ref[key];
-        param = window.encodeURIComponent(key);
-        if (value != null) {
-          param += '=' + window.encodeURIComponent(value);
-        }
-        queryParts.push(param);
-      }
-      return queryParts.join('&');
-    },
     getRequestUrl: function() {
-      var queryString;
-      queryString = this.getQueryString();
-      return (this.baseUrl + this.url + this.path) + (queryString ? '?' + queryString : '');
+      var name, ref, url, value;
+      url = (this.baseUrl + this.url + this.path) + (this.query ? '?' + this.query : '');
+      ref = this.params;
+      for (name in ref) {
+        value = ref[name];
+        url = url.replace(":" + name, window.encodeURIComponent(value));
+      }
+      return url;
     },
     getRequestHeaders: function() {
       var headers, key, ref, value;
