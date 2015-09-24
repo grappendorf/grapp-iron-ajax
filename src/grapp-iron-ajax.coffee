@@ -39,7 +39,7 @@ Polymer
     query: {type: String, value: null}
 
   observers: [
-    '_requestOptionsChanged(baseUrl, url, path, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'
+    '_requestOptionsChanged(baseUrl, url, path, query, method, params, headers,contentType, body, sync, handleAs, withCredentials, auto)'
   ]
 
 # grappendorf: removed the creation of a query string from the params hash
