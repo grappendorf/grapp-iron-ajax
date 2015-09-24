@@ -19,3 +19,7 @@ Modifications:
 * Set the 'Accept' header to 'application/json' for JSON requests
 * Add a 'token' property and set the 'Authorization' header to this token if it is specified
 * Set lastResponse to the response data in case of a request error
+* The property baseUrl is prepended to the resulting url
+* The property path is appended to the url
+* The property query is added (with a leading '?') as a query string to the url
+* The params property parameters now replace any ':name' patterns in the url
