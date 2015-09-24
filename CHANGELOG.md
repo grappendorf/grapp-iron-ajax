@@ -1,3 +1,12 @@
+<a name="0.2.2"></a>
+### 0.2.2 (2015-09-24)
+
+
+#### Features
+
+* params now replace ':name' parts of the url ([76fe4d71](http://github.com/grappendorf/grapp-iron-ajax/commit/76fe4d71c586d4b8f5a54407542e2a6773785426))
+
+
 <a name="0.2.1"></a>
 ### 0.2.1 (2015-09-24)
 
