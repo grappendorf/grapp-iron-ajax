@@ -54,7 +54,7 @@ Polymer
 
   getRequestHeaders: ->
     headers =
-      'Content-Type': @contentType
+      'content-Type': @contentType
     if @headers instanceof Object
       for key, value of @headers
         headers[key] = value.toString()
