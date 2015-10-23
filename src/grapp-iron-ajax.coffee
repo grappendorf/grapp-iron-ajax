@@ -63,8 +63,8 @@ Polymer
   toRequestOptions: ->
 # grappendorf: set Accept and Authorization headers
     headers = @getRequestHeaders()
-    headers['Accept'] = 'application/json' if @handleAs == 'json'
-    headers['Authorization'] = @token if @token
+    headers['accept'] = 'application/json' if @handleAs == 'json'
+    headers['authorization'] = @token if @token
     return {
     url: @getRequestUrl()
     method: @method,
