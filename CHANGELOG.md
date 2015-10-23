@@ -1,3 +1,12 @@
+<a name="0.2.5"></a>
+### 0.2.5 (2015-10-24)
+
+
+#### Bug Fixes
+
+* iron-request now expects headers to be lower case ([f4dab436](http://github.com/grappendorf/grapp-iron-ajax/commit/f4dab43674e2edd7be9dfc6b84b8b0d2205f159c))
+
+
 <a name="0.2.4"></a>
 ### 0.2.4 (2015-10-24)
 
